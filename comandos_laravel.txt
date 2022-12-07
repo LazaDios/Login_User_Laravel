@@ -1,0 +1,37 @@
+3-para arrancar el servidor LARAVAL
+php artisan serve
+
+2-para crear un models en Laravel , se debe hacer por linea de comando..
+
+php artisan make::model nombre -m
+
+
+3-conexion BD , debemos hacer primero una migracion , ir a la carpeta database/migrations/fecha_create_nombre.php
+
+aca encontramos dos funciones up & down , para insertar y eliminar..
+
+	$table -> id();
+	$table->timestamps();
+	$table->otravariablequequeramos();
+podemos insertar todo tipo de datos en nuestra tabla...
+
+4- hacemos la migracion , puede ser en mysql , mariaDB , PostgreSQL ,ect
+	*debemos crear la DATABASE donde haremos la migracion*
+	*en el .env , modificamos los valores para la conexion de la BD (nombre , pass , tabla ,ect)*
+	
+	php artisan migrate --> asi hacemos la insercion a la BD
+	php artisan migrate:rollback --> asi eliminamos todo lo que hemos realizado
+
+						"esto nos crea varias tablas"	
+
+5- UNIR , VISTA Y MODELO CON UN CONTROLADOR. debemos crear el controlador
+
+		php artisan make:controller nombreControlador
+"se crea una carpeta con el controlador en app/Http/Controller/nombreControlador.php"
+
+6- para revisar las rutas (route)
+	php artisan route:list
+
+7-Para hacer una relacion de dos tablas se usa el siguiente_Formato:
+	php artisan make:migration tableOne_to_tableTwo --table=tableOne
+
